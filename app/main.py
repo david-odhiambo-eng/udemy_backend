@@ -10,7 +10,7 @@ from settings.load_env import BACKEND_URL,ADMIN_URL
 
 dev_mode = FastAPI(title="DEV MODE")
 
-origins = [ADMIN_URL, BACKEND_URL]
+origins = [ADMIN_URL, BACKEND_URL, "http://localhost:53890"]
 
 dev_mode.add_middleware(
     CORSMiddleware,
