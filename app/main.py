@@ -6,11 +6,11 @@ from app.routes.auth import auth_router
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes.get_quiz import quiz_router
 from app.routes.topic_quiz_route import topic_quiz_router
-from settings.load_env import BACKEND_URL
+from settings.load_env import BACKEND_URL,ADMIN_URL
 
 dev_mode = FastAPI(title="DEV MODE")
 
-origins = ["http://localhost:55248", BACKEND_URL]
+origins = [ADMIN_URL, BACKEND_URL]
 
 dev_mode.add_middleware(
     CORSMiddleware,
